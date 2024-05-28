@@ -43,6 +43,7 @@ header {
     height: 7.2rem;
     align-items: center;
     align-content: center;
+    animation: fromTop 600ms 200ms backwards;
 }
 
 #logo {
@@ -152,6 +153,12 @@ main {
     border-radius: 999.9rem;
     gap: 1rem;
     padding: 1.2rem;
+    transition: 200ms;
+}
+
+.thumbs:hover {
+    scale: 1.1;
+    background-color: #07516a;
 }
 
 #thumb-up {
@@ -175,6 +182,10 @@ main {
     color: var(--text-black);
     font-size: 1.6rem;
     line-height: 160%;
+}
+
+.main-article, .related-articles {
+    animation: fromBottom 600ms 200ms backwards;
 }
 
 .related-articles {
@@ -226,6 +237,14 @@ footer {
     align-self: stretch;
 }
 
+img {
+    transition: all 200ms;
+}
+
+img:hover {
+    scale: 1.05;
+}
+
 @media (min-width: 63rem) {
 
     main {
@@ -240,4 +259,22 @@ footer {
             overflow: scroll;
             margin: 4.4rem auto 3.9rem;
         }
+    
+        .related-articles {
+            max-height: 61.5rem;
+        }
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
 }
